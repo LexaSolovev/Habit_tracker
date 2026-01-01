@@ -169,3 +169,16 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Production files
+.env.prod
+.env.production
+
+# SSH keys
+*.pem
+*.key
+id_rsa
+id_ed25519
+
+# Server backups
+backups/
