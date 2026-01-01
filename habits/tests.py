@@ -2,7 +2,6 @@ from django.test import TestCase
 from django.contrib.auth import get_user_model
 from rest_framework.test import APITestCase
 from rest_framework import status
-from django.urls import reverse
 from django.core.exceptions import ValidationError
 from .models import Habit
 from .validators import validate_habit
@@ -45,7 +44,7 @@ class HabitModelTest(TestCase):
             action="Бегать",
             estimated_duration=90,
         )
-        expected_str = f"Бегать в 07:00:00 в Парк"
+        expected_str = "Бегать в 07:00:00 в Парк"
         self.assertEqual(str(habit), expected_str)
 
     def test_habit_clean_method_valid(self):
