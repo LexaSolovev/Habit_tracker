@@ -24,7 +24,7 @@ REDIS_PASSWORD=${REDIS_PASSWORD}
 TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
 
 # Docker
-DOCKER_IMAGE=${DOCKER_IMAGE}
+DOCKER_IMAGE=ghcr.io/lexasolovev/habit_tracker:latest
 EOF
 
 echo ".env файл создан"
@@ -56,9 +56,5 @@ docker-compose -f docker-compose.prod.yml up -d --build
 # Миграции базы данных
 echo "Применение миграций..."
 docker-compose -f docker-compose.prod.yml exec -T django python manage.py migrate
-
-# Сбор статических файлов
-echo "Сбор статических файлов..."
-docker-compose -f docker-compose.prod.yml exec -T django python manage.py collectstatic --noinput
 
 echo "=== Деплой завершен успешно ==="

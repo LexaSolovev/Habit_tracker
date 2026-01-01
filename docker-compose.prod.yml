@@ -23,7 +23,7 @@ services:
       - habit_network
 
   django:
-    image: ${DOCKER_IMAGE:-ghcr.io/your-username/habit-tracker:latest}
+    image: ${DOCKER_IMAGE:-ghcr.io/lexasolovev/habit-tracker:latest}
     restart: unless-stopped
     depends_on:
       - postgres
